@@ -25,7 +25,10 @@ Navigate to https://127.0.01/8000/admin/graphql in your browser to access a grap
         customers{
             code
             name
-            orders
+            orders{
+                item
+                amount
+            }
         }
     }
 </pre>
