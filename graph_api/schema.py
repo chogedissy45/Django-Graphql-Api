@@ -102,7 +102,9 @@ class CreateCustomer(graphene.Mutation):
         customer_instance.save()
         # TODO: Send message
         sms.send(
-            "Your order has been approved", ["+254" + str(input.code)], callback=onFinish
+            "Hello "+input.name+", Your order of has been approved",
+            ["+254" + str(input.code)],
+            callback=onFinish,
         )
         return CreateCustomer(ok=ok, customer=customer_instance)
 
