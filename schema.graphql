@@ -1,0 +1,50 @@
+type Customer {
+  name: String!
+  code: Int!
+  orders: [Order]
+}
+
+type Order {
+  id: ID!
+  item: String!
+  amount: Int
+  time: Int
+}
+
+type Query {
+  customer(code: Int!): Customer
+  order(id: ID!): Order
+  customer: [Customer]
+  order: [Order]
+}
+
+input OrderInput {
+  id: ID!
+  item: String!
+  amount: Int
+  time: Int
+}
+input CustomerInput {
+  code: Int!
+  name: String!
+  orders: [OrderInput]
+}
+
+type OrderPayload {
+  ok: Boolean
+  order: Order
+}
+type CustomerPayload {
+  ok: Boolean
+  customer: Customer
+}
+
+type Mutation {
+  createOrder(input: OrderInput): OrderPayload
+  createCustomer(input: CustomerInput): CustomerPayload
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

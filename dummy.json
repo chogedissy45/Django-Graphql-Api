@@ -1,0 +1,29 @@
+[
+  {
+    "model": "orders.order",
+    "pk": 1,
+    "fields": {
+      "item": "Double Biscuits",
+      "amount": 200,
+      "time": 1
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 2,
+    "fields": {
+      "item": "Tea Biscuits",
+      "amount": 200,
+      "time": 23
+    }
+  },
+  {
+    "model": "orders.customer",
+    "pk": 1,
+    "fields": {
+      "code": 73456789,
+      "name": "Test User",
+      "orders": [1, 2]
+    }
+  }
+]
