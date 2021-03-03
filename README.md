@@ -1,5 +1,6 @@
 # DJANGO API
 
+
 ## Installation
 1. Clone this repo to your local directory
 2. Enable python virtual environment in the source directory
@@ -78,6 +79,7 @@ mutation createCustomer {
 </pre>
 
 ## Africastalking SMS integration
+In your project's root directory, rename .env.sample to .env and fill in the variable names with the corresponding values from Africastalking SDK
 
 When the mutation for creating a new customer having a particular order is run, the api automatically takes the code, user's phone numner and sends an order complete message
 <image src="ss/11.png"><image src="ss/22.png">

@@ -2,9 +2,12 @@ import graphene
 from graphene_django.types import DjangoObjectType, ObjectType
 from graph_api.orders.models import Order, Customer
 import africastalking
+from dotenv import load_dotenv
+import os
+load_dotenv(verbose=True)
 
-username = "sandbox"
-api_key = "0b092c6c17a1499e1a93d5a8e864194c454ada5181f7aa14d3295d3101a0cb02"
+username = os.getenv("USERNAME")
+api_key = os.getenv("API_KEY")
 
 
 sms = africastalking.SMSService(username, api_key)
